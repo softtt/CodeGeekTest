@@ -4,9 +4,7 @@ use yii\widgets\Pjax;
 
 Pjax::begin([
     'enablePushState' => false,
-    'enableReplaceState' => false,
-    'id' => 'w0', // checked id on the inspect element
-    'timeout' => 10000 // Timeout needed
+    'timeout' => 10000
 ]) ?>
 <?= \yii\widgets\ListView::widget(
     [

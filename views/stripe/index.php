@@ -16,9 +16,7 @@ StripeAsset::register($this);
         $('.dropdown').change(function () {
             var instance = $('.instance').val();
             var date = $('.date').val();
-           // if (instance == 'empty' && date == 'empty') {
-                $('#stripe-content').load('<?=Url::to('index.php?r=stripe%2Ffilter')?>', {instance: instance, date: date});
-            
+            $('#stripe-content').load('<?=Url::to('index.php?r=stripe%2Ffilter')?>', {instance: instance, date: date});
         });
     });
 </script>
@@ -64,7 +62,7 @@ StripeAsset::register($this);
     </div>
 
     <div class="row" id="stripe-content">
-        <?php Pjax::begin(['enablePushState' => false, 'enableReplaceState' => false]) ?>
+        <?php Pjax::begin(['enablePushState' => false, 'enableReplaceState' => false, 'timeout' => 10000]) ?>
         <?= \yii\widgets\ListView::widget(
             [
                 'layout' => "{items}\n{pager}",

@@ -23,7 +23,28 @@ class StripeService
             'allModels' => $data,
             'pagination' => [
                 'pageSize' => 5,
-                'route' => 'stripe'
+            ],
+        ]);
+
+        return $dataProvider;
+    }
+
+    public static function getDateFilteredStripeDataProvider($date)
+    {
+        $events = Event::find()->where('created_at >= DATE_SUB(CURDATE(), INTERVAL 1 ' . $date . ')')->all();
+        $music = Music::find()->where('created_at >= DATE_SUB(CURDATE(), INTERVAL 1 ' . $date . ')')->all();
+        $movies = Movie::find()->where('created_at >= DATE_SUB(CURDATE(), INTERVAL 1 ' . $date . ')')->all();
+
+        $music = array_merge($music, $movies);
+        $data = array_merge($music, $events);
+
+        $dataProvider = new ArrayDataProvider([
+            'allModels' => $data,
+            'pagination' => [
+                'pageSize' => 5,
+                'params' => [
+                    'date' => $date
+                ]
             ],
         ]);
 
@@ -58,7 +79,7 @@ class StripeService
     public static function getFilteresStripeDataprovider($date, $instance)
     {
 
-        if ($date == 'empty') {
+        if (!isset($date) || $date == 'empty') {
             switch ($instance) {
                 case 'movies' :
                     $data = Movie::find()->all();
@@ -66,10 +87,6 @@ class StripeService
                         'allModels' => $data,
                         'pagination' => [
                             'pageSize' => 5,
-                            'params' => [
-                                'instance' => $instance,
-                                'date' => $date
-                            ]
                         ],
                     ]);
                     break;
@@ -121,15 +138,11 @@ class StripeService
                         'allModels' => $data,
                         'pagination' => [
                             'pageSize' => 5,
-                            'params' => [
-                                'instance' => $instance,
-                                'date' => $date
-                            ]
                         ],
                     ]);
                     break;
                 default :
-                    $dataProvider = self::getStripeDataProvider();
+                    $dataProvider = self::getDateFilteredStripeDataProvider($date);
                     break;
             }
         }
