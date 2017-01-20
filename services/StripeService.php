@@ -24,8 +24,13 @@ class StripeService
             'pagination' => [
                 'pageSize' => 5,
             ],
+            'sort' => [
+                'defaultOrder' => [
+                    'created_at' => SORT_ASC,
+                ],
+                'attributes' => ['created_at'],
+            ],
         ]);
-
         return $dataProvider;
     }
 
@@ -45,6 +50,12 @@ class StripeService
                 'params' => [
                     'date' => $date
                 ]
+            ],
+            'sort' => [
+                'defaultOrder' => [
+                    'created_at' => SORT_ASC,
+                ],
+                'attributes' => ['created_at'],
             ],
         ]);
 
@@ -88,6 +99,12 @@ class StripeService
                         'pagination' => [
                             'pageSize' => 5,
                         ],
+                        'sort' => [
+                            'defaultOrder' => [
+                                'created_at' => SORT_ASC,
+                            ],
+                            'attributes' => ['created_at'],
+                        ],
                     ]);
                     break;
                 case 'music' :
@@ -97,6 +114,12 @@ class StripeService
                         'pagination' => [
                             'pageSize' => 5,
                         ],
+                        'sort' => [
+                            'defaultOrder' => [
+                                'created_at' => SORT_ASC,
+                            ],
+                            'attributes' => ['created_at'],
+                        ],
                     ]);
                     break;
                 case 'events' :
@@ -105,6 +128,12 @@ class StripeService
                         'allModels' => $data,
                         'pagination' => [
                             'pageSize' => 5,
+                        ],
+                        'sort' => [
+                            'defaultOrder' => [
+                                'created_at' => SORT_ASC,
+                            ],
+                            'attributes' => ['created_at'],
                         ],
                     ]);
                     break;
@@ -121,6 +150,12 @@ class StripeService
                         'pagination' => [
                             'pageSize' => 5,
                         ],
+                        'sort' => [
+                            'defaultOrder' => [
+                                'created_at' => SORT_ASC,
+                            ],
+                            'attributes' => ['created_at'],
+                        ],
                     ]);
                     break;
                 case 'music' :
@@ -130,6 +165,12 @@ class StripeService
                         'pagination' => [
                             'pageSize' => 5,
                         ],
+                        'sort' => [
+                            'defaultOrder' => [
+                                'created_at' => SORT_ASC,
+                            ],
+                            'attributes' => ['created_at'],
+                        ],
                     ]);
                     break;
                 case 'events' :
@@ -138,6 +179,12 @@ class StripeService
                         'allModels' => $data,
                         'pagination' => [
                             'pageSize' => 5,
+                        ],
+                        'sort' => [
+                            'defaultOrder' => [
+                                'created_at' => SORT_ASC,
+                            ],
+                            'attributes' => ['created_at'],
                         ],
                     ]);
                     break;

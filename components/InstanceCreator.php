@@ -73,7 +73,7 @@ class InstanceCreator
                     'performer' => 'Dead mans bones',
                     'cover' => $this->flag . '.jpg',
                     'release_date' => date('Y-m-d', $dateTime::createFromFormat('Y-m-d', '2009-12-12')->getTimestamp()),
-                    'album_name' => 'Dead mans bones',
+                    'album_name' => 'Dead mans bones (Album)',
                     'name' => 'Flowers grow out of my grave'
                 ]);
                 $instance->save();
@@ -84,7 +84,7 @@ class InstanceCreator
                     'performer' => 'David Bowie',
                     'cover' => $this->flag . '.jpg',
                     'release_date' => date('Y-m-d', $dateTime::createFromFormat('Y-m-d', '1967-12-12')->getTimestamp()),
-                    'album_name' => 'David Bowie',
+                    'album_name' => 'David Bowie (Album)',
                     'name' => 'Please Mr. Gravedigger'
                 ]);
                 $instance->save();
@@ -95,7 +95,7 @@ class InstanceCreator
                     'performer' => 'Queen',
                     'cover' => $this->flag . '.jpg',
                     'release_date' => date('Y-m-d', $dateTime::createFromFormat('Y-m-d', '1973-12-12')->getTimestamp()),
-                    'album_name' => 'Queen',
+                    'album_name' => 'Queen (Album)',
                     'name' => 'Great king rat'
                 ]);
                 $instance->save();
@@ -106,7 +106,7 @@ class InstanceCreator
                     'performer' => 'The Cure',
                     'cover' => $this->flag . '.jpg',
                     'release_date' => date('Y-m-d', $dateTime::createFromFormat('Y-m-d', '2014-12-12')->getTimestamp()),
-                    'album_name' => 'The Cure',
+                    'album_name' => 'The Cure (Album)',
                     'name' => 'The end of the world'
                 ]);
                 $instance->save();
